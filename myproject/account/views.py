@@ -33,7 +33,7 @@ def home(request):
 	id = request.user.id
 	profile = Profile.objects.get(user_id=id)
 	context = {'profile':profile}
-	return render(request,'account/home.html',context)
+	return render(request,'account/index.html',context)
 
 def login(request):
 	context = {}
