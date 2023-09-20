@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+    <form action="/account/register_store" method="post">
+        {% csrf_token %} 
+        <table border="1" cellspacing="0" cellpadding="10" align="center">
+            <tr>
+                <td>First Name</td>
+                <td><input type="text" name="fname" id="fname"></td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td><input type="text" name="lname" id="lname"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="email" name="email" id="email"></td>
+            </tr>
+            <tr>
+                <td>Username</td>
+                <td><input type="text" name="username" id="username"></td>
+            </tr>
+           
+            <tr>
+                <td>contact</td>
+                <td><input type="text" name="contact" id="contact"></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>
+                    <textarea name="address" id="address"></textarea>
+                </td>
+            </tr>
+             <tr>
+                <td>Password</td>
+                <td><input type="text" name="password" id="password"></td>
+            </tr>
+             <tr>
+                <td>Confirm Password</td>
+                <td><input type="text" name="cpassword" id="cpassword"></td>
+            </tr>
+            
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" name="regiser" id="register" value="register">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

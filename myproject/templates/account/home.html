@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home</title>
+</head>
+<body>
+	welcome, <b>{{request.user.first_name}} {{request.user.last_name}}</b>
+	<a href="/account/logout" style="float: right;">Logout</a>
+	<hr/>
+	<p>UserId : {{request.user.id}}</p>
+	<p>Fullname : {{request.user.first_name}} {{request.user.last_name}}</p>
+	<p>Email : {{request.user.email}}</p>
+	<p>Username : {{request.user.username}}</p>
+	
+	<p>Address : {{profile.address}}</p>
+	<p>Contact : {{profile.contact}}</p>
+</body>
+</html>
